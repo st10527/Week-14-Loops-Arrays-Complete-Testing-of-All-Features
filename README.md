@@ -1,50 +1,63 @@
-# Week 13 – Programming & Strings: Optional Bonus Features
+# Week 14 – Loops & Arrays: Complete Testing of All Features
 
 ## Objective
 
-This week, you’ll use your programming and string manipulation skills to add **bonus features**  
-to your monitoring system. Choose at least one enhancement to implement.
+This week, you will test **all components of your monitoring system** to ensure correctness and completeness.  
+You’ll use Python loops and validation logic to check your database, data quality, and metric ranges.
 
 ---
 
-## Suggested Features (Pick 1–2)
+## Tasks
 
-1. Count how many times CPU > 80% and display in console  
-2. Generate a **text summary report** showing key metrics (average, max, peaks)  
-3. (Optional) Simulate sending an email alert when CPU > 90%  
-4. (Optional) Save your summary as `summary.txt`  
+1. Verify that your `log.db` file exists and is readable.
+2. Check your `system_log` table for:
+   - Missing columns
+   - Empty or invalid data
+3. Validate numeric ranges for CPU, Memory, and Disk (0–100)
+4. Print a summary report of your testing results.
+5. (Optional) Save the test summary to a text file.
 
 ---
 
 ## Example Output
 
- **System Summary**
+🔍 Running Full System Test...
+
+✅ Database file found.
+
+✅ Loaded 120 records from system_log.
+
+✅ Column check passed.
+
+✅ No missing values detected.
+
+✅ All system metrics within valid range (0–100).
+
+===== Test Summary =====
 
 Total Records: 120
 
-Average CPU Usage: 31.45%
+Missing Values: 0
 
-Maximum CPU Usage: 95.2%
+Invalid CPU Records: 0
 
-Network DOWN count: 4
+🟢 System validation complete.
 
-Top 3 CPU Peaks: [95.2, 93.6, 90.1]
-
-⚠️ ALERT: 2 records exceeded 90% CPU usage.
 
 ---
 
 ## Submission Checklist
 
-- [ ] At least one bonus feature implemented  
-- [ ] Output printed in console or written to a file  
-- [ ] Screenshot or log output included  
-- [ ] Code committed and pushed to GitHub
+- [ ] `test_script.py` runs without error  
+- [ ] Summary output printed correctly  
+- [ ] Screenshot of terminal test results  
+- [ ] Code pushed to GitHub
 
 ---
 
 ## Bonus (Optional)
 
-- Simulate email notification (use `smtplib` or console print)
-- Add alert history table into `log.db`
-- Create a simple summary text file (`summary.txt`)
+- Save the test results into `test_report.txt`
+- Add automated re-run if any invalid records are found
+- Create a small dashboard page “System Health Check”
+
